@@ -264,12 +264,12 @@ class Blob {
   void ShareDiff(const Blob& other);
 
   bool ShapeEquals(const BlobProto& other);
-
+  vector<int> shape_;
  protected:
   shared_ptr<SyncedMemory> data_;
   shared_ptr<SyncedMemory> diff_;
   shared_ptr<SyncedMemory> shape_data_;
-  vector<int> shape_;
+//  vector<int> shape_;
   int count_;
   int capacity_;
 

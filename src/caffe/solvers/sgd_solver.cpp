@@ -87,6 +87,7 @@ void SGDSolver<Dtype>::ClipGradients() {
     sumsq_diff += net_params[i]->sumsq_diff();
   }
   const Dtype l2norm_diff = std::sqrt(sumsq_diff);
+  LOG(INFO) << "raviiiiiiiii" << l2norm_diff;
   if (l2norm_diff > clip_gradients) {
     Dtype scale_factor = clip_gradients / l2norm_diff;
     LOG(INFO) << "Gradient clipping: scaling down gradients (L2 norm "
@@ -110,11 +111,11 @@ void SGDSolver<Dtype>::ApplyUpdate() {
        ++param_id) {
     Normalize(param_id);
     Regularize(param_id);
+    Projection(param_id);
     ComputeUpdateValue(param_id, rate);
   }
   this->net_->Update();
 }
-
 template <typename Dtype>
 void SGDSolver<Dtype>::Normalize(int param_id) {
   if (this->param_.iter_size() == 1) { return; }
@@ -140,6 +141,28 @@ void SGDSolver<Dtype>::Normalize(int param_id) {
     LOG(FATAL) << "Unknown caffe mode: " << Caffe::mode();
   }
 }
+// Projection operation of the gradients
+template<typename Dtype>
+void SGDSolver<Dtype>::Projection(int param_id){
+const vector<Blob<Dtype>*>& net_params =  this->net_->learnable_params();
+LOG(INFO) <<net_params[param_id];
+
+Blob<Dtype>* W = this->net_->learnable_params()[param_id];
+const Dtype* W_data = W->cpu_data();
+Dtype* Z_data = W->mutable_cpu_diff();
+
+size_t skip = W->offset(0,1,0,0);
+
+Dtype t = W->diff_at(1,1,1,1);
+
+int of = W->offset(1,1,1,1);
+LOG(INFO)<<W->diff_at(1,1,1,1);
+
+Z_data[of] = 2;
+
+LOG(INFO) <<W->diff_at(1,1,1,1);
+}
+
 
 template <typename Dtype>
 void SGDSolver<Dtype>::Regularize(int param_id) {
@@ -147,6 +170,7 @@ void SGDSolver<Dtype>::Regularize(int param_id) {
   const vector<float>& net_params_weight_decay =
       this->net_->params_weight_decay();
   Dtype weight_decay = this->param_.weight_decay();
+
   string regularization_type = this->param_.regularization_type();
   Dtype local_decay = weight_decay * net_params_weight_decay[param_id];
   switch (Caffe::mode()) {

@@ -539,6 +539,7 @@ Dtype Net<Dtype>::ForwardFromTo(int start, int end) {
   for (int i = start; i <= end; ++i) {
     // LOG(ERROR) << "Forwarding " << layer_names_[i];
     Dtype layer_loss = layers_[i]->Forward(bottom_vecs_[i], top_vecs_[i]);
+    LOG(INFO) << " priting loss at layer" << i <<" " <<layer_loss;
     loss += layer_loss;
     if (debug_info_) { ForwardDebugInfo(i); }
   }
@@ -557,7 +558,16 @@ Dtype Net<Dtype>::ForwardTo(int end) {
 
 template <typename Dtype>
 const vector<Blob<Dtype>*>& Net<Dtype>::Forward(Dtype* loss) {
-  if (loss != NULL) {
+    for (int i = 0; i < this->learnable_params().size();i++){
+        LOG(INFO) << this->blob_names()[i];
+        LOG(INFO) << "Number of Axes" <<this->learnable_params()[i]->num_axes();
+            for (int j=0; j< this->learnable_params()[i]->num_axes();j++){
+                LOG(INFO) <<"shape of "<<j<<" th axes is "<<this->learnable_params()[i]->shape_[j];
+
+            }
+
+    }
+    if (loss != NULL) {
     *loss = ForwardFromTo(0, layers_.size() - 1);
   } else {
     ForwardFromTo(0, layers_.size() - 1);

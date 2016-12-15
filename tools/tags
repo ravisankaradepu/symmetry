@@ -1,0 +1,79 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BrewFunction	caffe.cpp	/^typedef int (*BrewFunction)();$/;"	t	file:
+BrewMap	caffe.cpp	/^typedef std::map<caffe::string, BrewFunction> BrewMap;$/;"	t	file:
+COLORS	extra/summarize.py	/^COLORS = ['92', '93', '94', '95', '97', '96', '42', '43;30', '100',$/;"	v
+CopyLayers	caffe.cpp	/^void CopyLayers(caffe::Solver<float>* solver, const std::string& model_list) {$/;"	f
+DISCONNECTED_COLOR	extra/summarize.py	/^DISCONNECTED_COLOR = '41'$/;"	v
+FLAGS	extra/resize_and_crop_images.py	/^FLAGS = gflags.FLAGS$/;"	v
+GetBrewFunction	caffe.cpp	/^static BrewFunction GetBrewFunction(const caffe::string& name) {$/;"	f	file:
+GetRequestedAction	caffe.cpp	/^caffe::SolverAction::Enum GetRequestedAction($/;"	f
+OpenCVResizeCrop	extra/resize_and_crop_images.py	/^class OpenCVResizeCrop:$/;"	c
+PILResizeCrop	extra/resize_and_crop_images.py	/^class PILResizeCrop:$/;"	c
+RegisterBrewFunction	caffe.cpp	56;"	d	file:
+ResizeCropImagesMapper	extra/resize_and_crop_images.py	/^class ResizeCropImagesMapper(mapreducer.BasicMapper):$/;"	c
+create_field_index	extra/plot_training_log.py.example	/^def create_field_index():$/;"	f
+device_query	caffe.cpp	/^RegisterBrewFunction(device_query);$/;"	v
+device_query	caffe.cpp	/^int device_query() {$/;"	f
+extract_datetime_from_line	extra/extract_seconds.py	/^def extract_datetime_from_line(line, year):$/;"	f
+extract_seconds	extra/extract_seconds.py	/^def extract_seconds(input_file, output_file):$/;"	f
+feature_extraction_pipeline	extract_features.cpp	/^int feature_extraction_pipeline(int argc, char** argv) {$/;"	f
+fix_initial_nan_learning_rate	extra/parse_log.py	/^def fix_initial_nan_learning_rate(dict_list):$/;"	f
+format_param	extra/summarize.py	/^def format_param(param):$/;"	f
+g_brew_map	caffe.cpp	/^BrewMap g_brew_map;$/;"	v
+get_chart_type_description	extra/plot_training_log.py.example	/^def get_chart_type_description(chart_type):$/;"	f
+get_chart_type_description_separator	extra/plot_training_log.py.example	/^def get_chart_type_description_separator():$/;"	f
+get_data_file	extra/plot_training_log.py.example	/^def get_data_file(chart_type, path_to_log):$/;"	f
+get_data_file_type	extra/plot_training_log.py.example	/^def get_data_file_type(chart_type):$/;"	f
+get_data_label	extra/plot_training_log.py.example	/^def get_data_label(path_to_log):$/;"	f
+get_field_descriptions	extra/plot_training_log.py.example	/^def get_field_descriptions(chart_type):$/;"	f
+get_field_indices	extra/plot_training_log.py.example	/^def get_field_indices(x_axis_field, y_axis_field):$/;"	f
+get_gpus	caffe.cpp	/^static void get_gpus(vector<int>* gpus) {$/;"	f	file:
+get_legend_loc	extra/plot_training_log.py.example	/^def get_legend_loc(chart_type):$/;"	f
+get_log_created_year	extra/extract_seconds.py	/^def get_log_created_year(input_file):$/;"	f
+get_log_file_suffix	extra/plot_training_log.py.example	/^def get_log_file_suffix():$/;"	f
+get_log_parsing_script	extra/plot_training_log.py.example	/^def get_log_parsing_script():$/;"	f
+get_start_time	extra/extract_seconds.py	/^def get_start_time(line_iterable, year):$/;"	f
+get_supported_chart_types	extra/plot_training_log.py.example	/^def get_supported_chart_types():$/;"	f
+is_valid_chart_type	extra/plot_training_log.py.example	/^def is_valid_chart_type(chart_type):$/;"	f
+is_x_axis_field	extra/plot_training_log.py.example	/^def is_x_axis_field(field):$/;"	f
+load_data	extra/plot_training_log.py.example	/^def load_data(data_file, field_idx0, field_idx1):$/;"	f
+main	caffe.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	compute_image_mean.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	convert_imageset.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	device_query.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	extra/parse_log.py	/^def main():$/;"	f
+main	extra/summarize.py	/^def main():$/;"	f
+main	extract_features.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	finetune_net.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	net_speed_benchmark.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	test_net.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	train_net.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	upgrade_net_proto_binary.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	upgrade_net_proto_text.cpp	/^int main(int argc, char** argv) {$/;"	f
+main	upgrade_solver_proto_text.cpp	/^int main(int argc, char** argv) {$/;"	f
+map	extra/resize_and_crop_images.py	/^    def map(self, key, value):$/;"	m	class:ResizeCropImagesMapper
+parse_args	extra/parse_log.py	/^def parse_args():$/;"	f
+parse_line_for_net_output	extra/parse_log.py	/^def parse_line_for_net_output(regex_obj, row, row_dict_list,$/;"	f
+parse_log	extra/parse_log.py	/^def parse_log(path_to_log):$/;"	f
+plot_chart	extra/plot_training_log.py.example	/^def plot_chart(chart_type, path_to_png, path_to_log_list):$/;"	f
+print_help	extra/plot_training_log.py.example	/^def print_help():$/;"	f
+print_table	extra/summarize.py	/^def print_table(table, max_width):$/;"	f
+printed_len	extra/summarize.py	/^def printed_len(s):$/;"	f
+random_marker	extra/plot_training_log.py.example	/^def random_marker():$/;"	f
+read_net	extra/summarize.py	/^def read_net(filename):$/;"	f
+resize_and_crop_image	extra/resize_and_crop_images.py	/^    def resize_and_crop_image(self, input_file, output_file, output_side_length = 256):$/;"	m	class:OpenCVResizeCrop
+resize_and_crop_image	extra/resize_and_crop_images.py	/^    def resize_and_crop_image(self, input_file, output_file, output_side_length = 256, fit = True):$/;"	m	class:PILResizeCrop
+save_csv_files	extra/parse_log.py	/^def save_csv_files(logfile_path, output_dir, train_dict_list, test_dict_list,$/;"	f
+summarize_net	extra/summarize.py	/^def summarize_net(net):$/;"	f
+test	caffe.cpp	/^RegisterBrewFunction(test);$/;"	v
+test	caffe.cpp	/^int test() {$/;"	f
+time	caffe.cpp	/^RegisterBrewFunction(time);$/;"	v
+time	caffe.cpp	/^int time() {$/;"	f
+train	caffe.cpp	/^RegisterBrewFunction(train);$/;"	v
+train	caffe.cpp	/^int train() {$/;"	f
+write_csv	extra/parse_log.py	/^def write_csv(output_filename, dict_list, delimiter, verbose=False):$/;"	f

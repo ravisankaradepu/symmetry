@@ -1,37 +1,43 @@
-# Caffe
+# SegNet and Bayesian SegNet Tutorial
 
-[![Build Status](https://travis-ci.org/BVLC/caffe.svg?branch=master)](https://travis-ci.org/BVLC/caffe)
-[![License](https://img.shields.io/badge/license-BSD-blue.svg)](LICENSE)
+This repository contains all the files for you to complete the 'Getting Started with SegNet' and the 'Bayesian SegNet' tutorials here:
+http://mi.eng.cam.ac.uk/projects/segnet/tutorial.html
 
-Caffe is a deep learning framework made with expression, speed, and modularity in mind.
-It is developed by the Berkeley Vision and Learning Center ([BVLC](http://bvlc.eecs.berkeley.edu)) and community contributors.
+Please see this link for detailed instructions.
 
-Check out the [project site](http://caffe.berkeleyvision.org) for all the details like
+## Getting Started with Live Demo
 
-- [DIY Deep Learning for Vision with Caffe](https://docs.google.com/presentation/d/1UeKXVgRvvxg9OUdh_UiC5G71UMscNPlvArsWER41PsU/edit#slide=id.p)
-- [Tutorial Documentation](http://caffe.berkeleyvision.org/tutorial/)
-- [BVLC reference models](http://caffe.berkeleyvision.org/model_zoo.html) and the [community model zoo](https://github.com/BVLC/caffe/wiki/Model-Zoo)
-- [Installation instructions](http://caffe.berkeleyvision.org/installation.html)
+If you would just like to try out an example model, then you can find the model used in the [SegNet webdemo](http://mi.eng.cam.ac.uk/projects/segnet/) in the folder ```Example_Models/```. You will need to download the weights separately using the link in the [SegNet Model Zoo](https://github.com/alexgkendall/SegNet-Tutorial/blob/master/Example_Models/segnet_model_zoo.md).
 
-and step-by-step examples.
+First open ```Scripts/webcam_demo.py``` and edit line 14 to match the path to your installation of SegNet. You will also need a webcam, or alternatively edit line 39 to input a video file instead. To run the demo use the command:
 
-[![Join the chat at https://gitter.im/BVLC/caffe](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BVLC/caffe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+```python Scripts/webcam_demo.py --model Example_Models/segnet_model_driving_webdemo.prototxt --weights /Example_Models/segnet_weights_driving_webdemo.caffemodel --colours /Scripts/camvid12.png```
 
-Please join the [caffe-users group](https://groups.google.com/forum/#!forum/caffe-users) or [gitter chat](https://gitter.im/BVLC/caffe) to ask questions and talk about methods and models.
-Framework development discussions and thorough bug reports are collected on [Issues](https://github.com/BVLC/caffe/issues).
+## Example Models
 
-Happy brewing!
+A number of example models for indoor and outdoor road scene understanding can be found in the [SegNet Model Zoo](https://github.com/alexgkendall/SegNet-Tutorial/blob/master/Example_Models/segnet_model_zoo.md).
 
-## License and Citation
+## Publications
 
-Caffe is released under the [BSD 2-Clause license](https://github.com/BVLC/caffe/blob/master/LICENSE).
-The BVLC reference models are released for unrestricted use.
+For more information about the SegNet architecture:
 
-Please cite Caffe in your publications if it helps your research:
+http://arxiv.org/abs/1511.02680
+Alex Kendall, Vijay Badrinarayanan and Roberto Cipolla "Bayesian SegNet: Model Uncertainty in Deep Convolutional Encoder-Decoder Architectures for Scene Understanding." arXiv preprint arXiv:1511.02680, 2015.
 
-    @article{jia2014caffe,
-      Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
-      Journal = {arXiv preprint arXiv:1408.5093},
-      Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
-      Year = {2014}
-    }
+http://arxiv.org/abs/1511.00561
+Vijay Badrinarayanan, Alex Kendall and Roberto Cipolla "SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image Segmentation." arXiv preprint arXiv:1511.00561, 2015. 
+
+## License
+
+This software is released under a creative commons license which allows for personal and research use only. For a commercial license please contact the authors. You can view a license summary here:
+http://creativecommons.org/licenses/by-nc/4.0/
+
+
+## Contact
+
+Alex Kendall
+
+agk34@cam.ac.uk
+
+Cambridge University
+

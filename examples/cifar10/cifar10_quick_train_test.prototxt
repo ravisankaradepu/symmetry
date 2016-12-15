@@ -129,7 +129,7 @@ layer {
     lr_mult: 2
   }
   convolution_param {
-    num_output: 64
+    num_output: 44
     pad: 2
     kernel_size: 5
     stride: 1
